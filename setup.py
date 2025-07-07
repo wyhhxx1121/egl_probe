@@ -34,8 +34,15 @@ class CMakeBuild(build_ext):
             shutil.rmtree(build_dir)
         os.mkdir(build_dir)
 
+        # # build using cmake
+        # subprocess.check_call("cmake ..; make -j", cwd=build_dir, shell=True)
         # build using cmake
-        subprocess.check_call("cmake ..; make -j", cwd=build_dir, shell=True)
+        #subprocess.check_call("cmake ..; make -j", cwd=build_dir, shell=True)
+        subprocess.check_call("cmake ..", cwd=build_dir, shell=True)
+ 
+        # build using cmake
+        #subprocess.check_call("cmake ..; make -j", cwd=build_dir, shell=True)
+        subprocess.check_call("cmake ..", cwd=build_dir, shell=True)
 
 
 if sys.version_info.major == 3:
